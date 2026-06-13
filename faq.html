@@ -484,7 +484,15 @@
     </main>
 
     <footer class="footer">
-      <div class="container footer__inner">
+      <div
+        class="container footer__inner"
+        style="
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 32px !important;
+          align-items: start !important;
+        "
+      >
         <div class="footer__brand">
           <span class="logo-icon">
             <a href="index.html" class="header__logo">
