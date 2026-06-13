@@ -184,12 +184,12 @@ body {
 /* ── 11. FOOTER responsive (Ordinateur & Mobile) ─────────────────────── */
 
 /* Configuration par défaut : Grands écrans / Ordinateur */
-.footer__inner {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales qui occupent toute la largeur */
-  gap: var(--space-8);
-  padding-block: var(--space-8);
-  align-items: start;
+footer.footer .footer__inner {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: var(--space-8) !important;
+  padding-block: var(--space-8) !important;
+  align-items: start !important;
 }
 
 /* Alignement vertical et espacement des liens internes */
@@ -210,10 +210,9 @@ body {
 
 /* Version Mobile (votre règle initiale enrichie) */
 @media (max-width: 600px) {
-  .footer__inner {
-    grid-template-columns: 1fr !important; /* Retour à une seule colonne verticale */
+  footer.footer .footer__inner {
+    grid-template-columns: 1fr !important;
     gap: var(--space-6) !important;
-    padding-block: var(--space-8) !important;
   }
 }
 
