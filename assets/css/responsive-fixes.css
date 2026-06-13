@@ -8,7 +8,8 @@
 /* Toutes les sections qui utilisent .container sont
    déjà centrées via margin-inline:auto.
    On s'assure qu'aucun overflow horizontal ne survient.     */
-html, body {
+html,
+body {
   overflow-x: hidden;
   max-width: 100vw;
 }
@@ -87,8 +88,12 @@ html, body {
     gap: var(--space-8) !important;
   }
   /* Galerie au-dessus des infos                             */
-  .product-gallery { order: 1; }
-  .product-info    { order: 2; }
+  .product-gallery {
+    order: 1;
+  }
+  .product-info {
+    order: 2;
+  }
 
   /* Limiter la hauteur de la galerie sur tablette           */
   .gallery-main {
@@ -98,7 +103,7 @@ html, body {
 
 /* ── 5. CATALOGUE : centrage desktop ──────────────────────── */
 .catalogue-main {
-  min-width: 0;     /* évite le débordement dans CSS Grid    */
+  min-width: 0; /* évite le débordement dans CSS Grid    */
 }
 
 /* Sur mobile la grille produits passe à 2 cols minimum      */
@@ -119,8 +124,13 @@ html, body {
     gap: var(--space-6) !important;
   }
   /* Récap passe après le formulaire                         */
-  .commande-layout > div:first-child { order: 1; }
-  .order-summary                     { order: 2; position: static !important; }
+  .commande-layout > div:first-child {
+    order: 1;
+  }
+  .order-summary {
+    order: 2;
+    position: static !important;
+  }
 }
 
 /* ── 7. PAGE HERO : texte ne déborde pas sur mobile ──────── */
@@ -171,10 +181,37 @@ html, body {
   }
 }
 
-/* ── 11. FOOTER responsive ─────────────────────────────────── */
+/* ── 11. FOOTER responsive (Ordinateur & Mobile) ─────────────────────── */
+
+/* Configuration par défaut : Grands écrans / Ordinateur */
+.footer__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales qui occupent toute la largeur */
+  gap: var(--space-8);
+  padding-block: var(--space-8);
+  align-items: start;
+}
+
+/* Alignement vertical et espacement des liens internes */
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer__links a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__contact p {
+  margin-bottom: var(--space-2);
+}
+
+/* Version Mobile (votre règle initiale enrichie) */
 @media (max-width: 600px) {
   .footer__inner {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr !important; /* Retour à une seule colonne verticale */
     gap: var(--space-6) !important;
     padding-block: var(--space-8) !important;
   }
@@ -189,7 +226,7 @@ html, body {
     height: 28px !important;
   }
   .header__actions .btn {
-    padding: .4em .8em !important;
+    padding: 0.4em 0.8em !important;
     font-size: var(--text-xs) !important;
   }
 }
@@ -198,14 +235,14 @@ html, body {
 @media (max-width: 768px) {
   .form-input,
   .select-input {
-    font-size: 16px !important;  /* évite le zoom auto sur iOS   */
+    font-size: 16px !important; /* évite le zoom auto sur iOS   */
   }
 }
 
 /* ── 14. MODALS : pleine largeur sur mobile ────────────────── */
 @media (max-width: 560px) {
   .modal-overlay {
-    align-items: flex-end !important;  /* slide-up depuis le bas    */
+    align-items: flex-end !important; /* slide-up depuis le bas    */
     padding: 0 !important;
   }
   .modal {
